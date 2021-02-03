@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/shoppingCart.css">
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <div class="top-box">
+        <div class="top-con">
+            <div class="top_login_r top_red"></div>
+            <ul class="top_login top_red">
+                <li id="headorderID_a" style="display:none">
+                    <a href="">我的订单</a>
+                </li>
+                <li class="top_loginbtn" id="LoginID">
+                    <a href="" class="login">登录</a>
+                </li>
+            </ul>
+            <div class="top_phone">
+                <div class="top_phone_title">
+                    <span class="UserNameID"></span>
+                    <a href="" class=" top_usepng top_downs"></a>
+                </div>
+                <ul>
+                    <li><a href="">我的商城</a></li>
+                    <li><a href="" class="logout"></a>退出登录</li>
+                </ul>
+            </div>
+            <ul class="top_login top_red">
+                <li style="border-left:none;"><a href="">返回首页</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="top_logob">
+        <img src="./images/pic-13.jpg" alt="" class="top_logob_imga">
+        <img src="./images/pic-12.jpg" alt="" class="top_logob_imgb">
+    </div>
+    <div class="buycart w1200">
+        <div id="cart_main">
+            <div class="bc_table">
+                <table cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <th colspan="3" width="462">商品</th>
+                            <th width="163">规格</th>
+                            <th width="152">单价</th>
+                            <th width="152">数量</th>
+                            <th width="152">金额</th>
+                            <th width="117">操作</th>
+                        </tr>
+                    </tbody>
+                </table>
+                <table cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td width="57" class="bc_table_sel">
+                                <input type="checkbox">
+                            </td>
+                            <td width="148" class="bc_table_img">
+                                <a href="">
+                                    <img src="" alt="">
+                                    <div class="bc_zhezhao"></div>
+                                </a>
+                            </td>
+                            <td width="257" class="bc_proname bc_name_gift">
+                                <a href="">联想平板小新Pad Pro 11.5英寸 影音娱乐办公学习平板电脑 深空灰</a>
+                                <div class="bc_service"></div>
+                            </td>
+                            <td width="163" ></td>
+                            <td width="152" style="position:relative">
+                                <span class="current_price">1999.0</span>
+                            </td>
+                            <td width="152">
+                                <label for="" class="i-box">
+                                    <input type="button" class="pro_less J_minus" value="-">
+                                    <input type="text" value="1" class="pro_num J_input">
+                                    <input type="button" class="pro_add J_add" value="+">
+                                </label>
+                            </td>
+                            <td width="152" class="bc_red">1999.00</td>
+                            <td width="117" style="text-align: left;">
+                                <a href="" style="color:#000">删除 </a><br>
+                                <a href=""style="color:#000">移入收藏夹</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="57" class="bc_table_sel">
+                                <input type="checkbox">
+                            </td>
+                            <td width="148" class="bc_table_img">
+                                <a href="">
+                                    <img src="" alt="">
+                                    <div class="bc_zhezhao"></div>
+                                </a>
+                            </td>
+                            <td width="257" class="bc_proname bc_name_gift">
+                                <a href="">联想平板小新Pad Pro 11.5英寸 影音娱乐办公学习平板电脑 深空灰</a>
+                                <div class="bc_service"></div>
+                            </td>
+                            <td width="163" ></td>
+                            <td width="152" style="position:relative">
+                                <span class="current_price">1999.0</span>
+                            </td>
+                            <td width="152">
+                                <label for="" class="i-box">
+                                    <input type="button" class="pro_less J_minus" value="-">
+                                    <input type="text" value="1" class="pro_num J_input">
+                                    <input type="button" class="pro_add J_add" value="+">
+                                </label>
+                            </td>
+                            <td width="152" class="bc_red">1999.00</td>
+                            <td width="117" style="text-align: left;">
+                                <a href="" style="color:#000">删除 </a><br>
+                                <a href=""style="color:#000">移入收藏夹</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="bc_num clear-fix">
+                <div class="bc_num_fl">
+                    <div class="bc_all clear-fix">
+                        <input type="checkbox">
+                        <span>全选</span>
+                    </div>
+                    <i class="bc_num_del">删除选中商品</i>
+                </div>
+                <ul class="bc_num_fr">
+                    <li style="margin-top:0">商品总价：0.00  </li>
+                    <li>优惠节省：0.00 </li>
+                    <li>
+                        合计：
+                        <span class="bc_red"> 0 </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="bc_probtn clear-fix">
+                <a href="" id="submit">去结算</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        
+        $(".pro_add").click(function(){
+            let num = $(this).prev().val()
+            num++;
+            $(this).prev().val(num)
+        })
+        $(".pro_less").click(function(){
+            let num = $(this).next().val();
+            if(num > 1){
+                num--;
+                $(this).next().val(num);
+            }
+           
+        })
+    </script>
+</body>
+</html>
